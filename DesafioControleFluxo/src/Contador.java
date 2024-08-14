@@ -8,10 +8,9 @@ public class Contador {
 		System.out.println("Digite o segundo parâmetro");
 		int parametroDois = terminal.nextInt();
 
-		ParametrosInvalidosException exceção = new ParametrosInvalidosException()
+		ParametrosInvalidosException exceção = new ParametrosInvalidosException();
 		
 		try {
-			//chamando o método contendo a lógica de contagem
 			contar(parametroUm, parametroDois);
 		
 		}catch (RuntimeException exception) {
@@ -19,7 +18,7 @@ public class Contador {
 		}
 		
 	}
-	static void contar(int parametroUm, int parametroDois ) throws ParametrosInvalidosException {
+	static void contar(int parametroUm, int parametroDois ) {
 		//validar se parametroUm é MAIOR que parametroDois e lançar a exceção
 		if (parametroUm > parametroDois) {
 			ParametrosInvalidosException.exceção();
@@ -28,7 +27,7 @@ public class Contador {
 		else{
 		int contagem = parametroDois - parametroUm;
 		for(int i = 0;i < contagem;i++)
-		System.out.println(contagem);
+		System.out.println("Imprimindo o numero: " + (i+1));
 		}
 	}
 }
